@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import Signin from './page/signin/Signin';
 import Signup from './page/signup/signup';
 import Home from './page/home/Home';
@@ -9,7 +8,6 @@ import UserInfo from './page/home/userinfo/UserInfo';
 import ChangePassword from './page/home/changepassword/ChangePassword';
 import ForgotPassword from './page/home/forgotpassword/ForgotPassword';
 import ListGroups from './page/home/listgroup/ListGroups';
-import { useState } from 'react';
 import ResetPassword from './page/home/resetpassword/ResetPassword';
 
 const SignUpWithLoading = WithLoading(Signup)
@@ -20,11 +18,7 @@ const UserWithLoading = WithLoading(UserInfo)
 const PasswordChangingWithLoading = WithLoading(ChangePassword)
 const ResetPasswordWithLoading = WithLoading(ResetPassword)
 function App() {
-  // localStorage.getItem('login', true)
 
-  // const isLoggedIn = localStorage.getItem('login')
-
-  const [data, setData] = useState([])
   const username = localStorage.getItem('username')
   if (!username) {
     return (
